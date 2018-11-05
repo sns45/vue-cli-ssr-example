@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <HelloWorld parent="something" />
+    <HelloWorld2 parent="something" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld : () => import('./components/HelloWorld.vue'),
+    HelloWorld2 : () => import('./components/HelloWorld2.vue')
   }
 }
 </script>
